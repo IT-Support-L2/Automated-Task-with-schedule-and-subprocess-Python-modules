@@ -19,7 +19,7 @@ def automated():
   
   if mem_used >= 80: # alert if memory used is 80% or more and excecute the explained PowerShell command below 
     win32api.MessageBox(0, 'Memory usage is greater than 80%!!', 'Warning!')
-    action = subprocess.run("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe 'ipconfig/ flushdns' ", shell=True, capture_output=True) # This powershell command will discard negative cache entries from the cache, as well as any other entries that have been added dynamically, which results in decreasing the current memory use.
+    action = subprocess.run("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe 'ipconfig/ flushdns' ", shell=True, capture_output=True) # This powershell command will discard negative cache entries from the cache, as well as any other entries that have been added dynamically, which results in decreasing the current memory in use.
     print(f"The system exit code is {action.returncode} and the Powershell command executed is {action.stdout}.")
     
     # returncode == system.exit() code
